@@ -1,28 +1,22 @@
 <%= form_with(model: authentication) do |form| %>
-  <% form.errors(:base) do |errors| %>
-    <% if errors.any? %>
-      <%= tag.span errors.to_sentence, aria: { live: "assertive" } %>
-    <% end %>
+  <%= form.validation_message :base, aria: { live: "assertive" } do |errors, tag| %>
+    <%= tag.p errors.to_sentence %>
   <% end %>
 
-  <% form.errors(:username) do |errors| %>
-    <%= form.label :username %>
-    <%= form.text_field :username, aria: {
-      describedby: form.validation_message_id(:username),
-    } %>
-    <% if errors.any? %>
-      <%= tag.span errors.to_sentence, id: form.validation_message_id(:username) %>
-    <% end %>
+  <%= form.label :username %>
+  <%= form.text_field :username, aria: {
+    describedby: form.validation_message_id(:username),
+  } %>
+  <%= form.validation_message :username do |errors, tag| %>
+    <%= tag.span errors.to_sentence %>
   <% end %>
 
-  <% form.errors(:password) do |errors| %>
-    <%= form.label :password %>
-    <%= form.password_field :password, aria: {
-      describedby: form.validation_message_id(:password),
-    } %>
-    <% if errors.any? %>
-      <%= tag.span errors.to_sentence, id: form.validation_message_id(:password) %>
-    <% end %>
+  <%= form.label :password %>
+  <%= form.password_field :password, aria: {
+    describedby: form.validation_message_id(:password),
+  } %>
+  <%= form.validation_message :password do |errors, tag| %>
+    <%= tag.span errors.to_sentence %>
   <% end %>
 
   <%= form.button %>

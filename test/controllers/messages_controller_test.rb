@@ -41,7 +41,8 @@ class MessagesControllerTest < ActionDispatch::IntegrationTest
     get messages_path
 
     assert_response :success
-    assert_select "#message_content_validation_message", count: 0
+    assert_select "trix-editor#message_content ~ #message_content_validation_message", count: 0
+    assert_select "trix-editor#message_content ~ span", count: 0
     assert_select %{trix-editor:not([aria-invalid="true"]):not([aria-describedby])}
   end
 
@@ -52,7 +53,7 @@ class MessagesControllerTest < ActionDispatch::IntegrationTest
     }
 
     assert_redirected_to(messages_url).then { follow_redirect! }
-    assert_select "#message_content_validation_message", "can't be blank"
+    assert_select "trix-editor#message_content ~ #message_content_validation_message", "can't be blank"
     assert_select %{trix-editor[aria-invalid="true"][aria-describedby~="message_content_validation_message"]}
   end
 end
