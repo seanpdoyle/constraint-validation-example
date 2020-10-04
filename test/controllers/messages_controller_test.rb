@@ -2,6 +2,7 @@ require "test_helper"
 
 class MessagesControllerTest < ActionDispatch::IntegrationTest
   test "#create with invalid parameters redirects to the new action" do
+    sign_in_as :alice
     post messages_path, params: {
       message: { content: "" }
     }
@@ -11,6 +12,7 @@ class MessagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "#create clears parameters once successful" do
+    sign_in_as :alice
     post messages_path, params: {
       message: { content: "" }
     }
@@ -26,7 +28,16 @@ class MessagesControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test "#index through a direct request renders a fresh Message form" do
+  test "#index when unauthenticated links to the log in page" do
+    get messages_path
+
+    assert_response :success
+    assert_select "trix-editor", count: 0
+    assert_select %(a[href="#{new_authentication_path}"])
+  end
+
+  test "#index through a direct authenticated request renders a fresh Message form" do
+    sign_in_as :alice
     get messages_path
 
     assert_response :success
@@ -35,6 +46,7 @@ class MessagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "#index when redirected with invalid parameters renders errors" do
+    sign_in_as :alice
     post messages_path, params: {
       message: { content: "" }
     }
@@ -43,13 +55,4 @@ class MessagesControllerTest < ActionDispatch::IntegrationTest
     assert_select "#message_content_validation_message", "can't be blank"
     assert_select %{trix-editor[aria-invalid="true"][aria-describedby~="message_content_validation_message"]}
   end
-
-  private
-    def assert_flash_params(params)
-      values_from_flash = flash[:params].slice(*params.keys)
-
-      assert_equal \
-        params.with_indifferent_access,
-        values_from_flash.with_indifferent_access
-    end
 end

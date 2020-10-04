@@ -1,0 +1,12 @@
+DEFAULTS: &DEFAULTS
+  record: $LABEL (Message)
+
+alice_hello_bob:
+  <<: *DEFAULTS
+  name: content
+  body: <div>Hello, Bob</div>
+
+bob_hello_alice:
+  <<: *DEFAULTS
+  name: content
+  body: <div>Hello, Alice</div>

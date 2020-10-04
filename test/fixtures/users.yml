@@ -1,0 +1,9 @@
+DEFAULTS: &DEFAULTS
+  username: $LABEL
+  password_digest: <%= BCrypt::Password.create("password") %>
+
+alice:
+  <<: *DEFAULTS
+
+bob:
+  <<: *DEFAULTS

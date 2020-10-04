@@ -4,17 +4,27 @@
   <% end %>
 </ul>
 
-<%= form_with model: message do |form| %>
-  <% form.object.errors[:content].tap do |errors| %>
-    <%= form.label :content %>
-    <%= form.rich_text_area :content, aria: {
-      describedby: {message_content_validation_message: errors.any?},
-      invalid: errors.any?
-    } %>
-    <% if errors.any? %>
-      <%= tag.span errors.to_sentence, id: :message_content_validation_message %>
+<% if Current.user %>
+  <%= form_with model: message do |form| %>
+    <% form.object.errors[:content].tap do |errors| %>
+      <%= form.label :content %>
+      <%= form.rich_text_area :content, aria: {
+        describedby: {form.field_id(:content, :validation_message) => errors.any?},
+        invalid: errors.any?
+      } %>
+      <% if errors.any? %>
+        <%= tag.span errors.to_sentence, id: form.field_id(:content, :validation_message) %>
+      <% end %>
     <% end %>
+
+    <%= form.button %>
   <% end %>
 
-  <%= form.button %>
+  <%= button_to authentication_path, method: :delete do %>
+    Log out
+  <% end %>
+<% else %>
+  <%= link_to new_authentication_path do %>
+    Log in to send a message
+  <% end %>
 <% end %>

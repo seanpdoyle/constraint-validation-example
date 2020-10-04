@@ -32,8 +32,13 @@
 en:
   helpers:
     label:
+      authentication:
+        username: "Username"
+        password: "Password"
       message:
         content: "Content"
     submit:
+      authentication:
+        create: "Log in"
       message:
         create: "Send"

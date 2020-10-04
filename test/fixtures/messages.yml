@@ -1,0 +1,7 @@
+alice_hello_bob:
+  created_at: <%= 5.minutes.ago %>
+  user: alice
+
+bob_hello_alice:
+  created_at: <%= 10.minutes.ago %>
+  user: bob

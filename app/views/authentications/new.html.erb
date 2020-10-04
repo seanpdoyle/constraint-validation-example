@@ -1,0 +1,31 @@
+<%= form_with(model: authentication) do |form| %>
+  <% form.object.errors[:base].tap do |errors| %>
+    <% if errors.any? %>
+      <%= tag.span errors.to_sentence, aria: { live: "assertive" } %>
+    <% end %>
+  <% end %>
+
+  <% form.object.errors[:username].tap do |errors| %>
+    <%= form.label :username %>
+    <%= form.text_field :username, aria: {
+      describedby: {form.field_id(:username, :validation_message) => errors.any?},
+      invalid: errors.any?
+    } %>
+    <% if errors.any? %>
+      <%= tag.span errors.to_sentence, id: form.field_id(:username, :validation_message) %>
+    <% end %>
+  <% end %>
+
+  <% form.object.errors[:password].tap do |errors| %>
+    <%= form.label :password %>
+    <%= form.password_field :password, aria: {
+      describedby: {form.field_id(:password, :validation_message) => errors.any?},
+      invalid: errors.any?
+    } %>
+    <% if errors.any? %>
+      <%= tag.span errors.to_sentence, id: form.field_id(:password, :validation_message) %>
+    <% end %>
+  <% end %>
+
+  <%= form.button %>
+<% end %>
