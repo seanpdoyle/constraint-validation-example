@@ -6,6 +6,8 @@ type FieldElement =
   HTMLSelectElement |
   HTMLTextAreaElement
 
+type SubmitElement = HTMLButtonElement | HTMLInputElement
+
 addEventListener("invalid", (event) => {
   if (isFieldElement(event.target)) {
     reportValidity(event.target)
@@ -23,8 +25,16 @@ addEventListener("focusout", ({ target }) => {
   }
 })
 
+addEventListener("input", ({ target }) => {
+  if (isFieldElement(target)) {
+    disableSubmit(target.form)
+  }
+})
+
 function clearValidity(input: FieldElement): void {
   input.setCustomValidity("")
+
+  if (input.form) disableSubmit(input.form)
 
   reportValidity(input)
 }
@@ -51,7 +61,17 @@ function reportValidity(input: FieldElement): void {
     if (!element.parentElement) {
       input.parentElement.append(element)
     }
+
+    if (input.form) disableSubmit(input.form)
   }
+}
+
+function disableSubmit(form: HTMLFormElement): void {
+  const submitButtons = Array.from(form.querySelectorAll('[type="submit"], button:not([type])')).filter(isSubmitElement)
+  const fields = Array.from(form.elements).filter(isFieldElement)
+  const isValid = fields.every(input => input.validity.valid)
+
+  for (const submitButton of submitButtons) submitButton.disabled = !isValid
 }
 
 function createValidationMessageFragment(form) {
@@ -87,4 +107,8 @@ function isFieldElement(element: any): element is FieldElement {
     HTMLSelectElement,
     HTMLTextAreaElement,
   ].some(field => element instanceof field)
+}
+
+function isSubmitElement(element: any): element is SubmitElement {
+  return [ HTMLButtonElement, HTMLInputElement ].some(field => element instanceof field)
 }
