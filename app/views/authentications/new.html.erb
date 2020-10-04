@@ -8,20 +8,20 @@
   <% form.errors(:username) do |errors| %>
     <%= form.label :username %>
     <%= form.text_field :username, aria: {
-      describedby: {form.field_id(:username, :validation_message) => errors.any?},
+      describedby: form.validation_message_id(:username),
     } %>
     <% if errors.any? %>
-      <%= tag.span errors.to_sentence, id: form.field_id(:username, :validation_message) %>
+      <%= tag.span errors.to_sentence, id: form.validation_message_id(:username) %>
     <% end %>
   <% end %>
 
   <% form.errors(:password) do |errors| %>
     <%= form.label :password %>
     <%= form.password_field :password, aria: {
-      describedby: {form.field_id(:password, :validation_message) => errors.any?},
+      describedby: form.validation_message_id(:password),
     } %>
     <% if errors.any? %>
-      <%= tag.span errors.to_sentence, id: form.field_id(:password, :validation_message) %>
+      <%= tag.span errors.to_sentence, id: form.validation_message_id(:password) %>
     <% end %>
   <% end %>
 

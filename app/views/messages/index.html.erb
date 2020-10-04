@@ -9,10 +9,10 @@
     <% form.errors(:content) do |errors| %>
       <%= form.label :content %>
       <%= form.rich_text_area :content, aria: {
-        describedby: {form.field_id(:content, :validation_message) => errors.any?},
+        describedby: form.validation_message_id(:content),
       } %>
       <% if errors.any? %>
-        <%= tag.span errors.to_sentence, id: form.field_id(:content, :validation_message) %>
+        <%= tag.span errors.to_sentence, id: form.validation_message_id(:content) %>
       <% end %>
     <% end %>
 
