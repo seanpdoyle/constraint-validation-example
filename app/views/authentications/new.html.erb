@@ -1,27 +1,29 @@
 <%= form_with(model: authentication) do |form| %>
   <%= form.validation_message_template do |messages, tag| %>
-    <%= tag.span(messages.to_sentence) %>
+    <%= tag.span(messages.to_sentence, class: "text-red-500 text-xs italic") %>
   <% end %>
 
   <%= form.validation_message :base, aria: { live: "assertive" } do |errors, tag| %>
-    <%= tag.p errors.to_sentence %>
+    <%= tag.p errors.to_sentence, class: "text-red-500 text italic" %>
   <% end %>
 
-  <div>
+  <div class="flex flex-col mb-4 space-y-2">
     <%= form.label :username %>
-    <%= form.text_field :username, aria: {
+    <%= form.text_field :username, class: "form-input", aria: {
       describedby: form.validation_message_id(:username),
     } %>
     <%= form.validation_message :username %>
   </div>
 
-  <div>
+  <div class="flex flex-col mb-4 space-y-2">
     <%= form.label :password %>
-    <%= form.password_field :password, aria: {
+    <%= form.password_field :password, class: "form-input", aria: {
       describedby: form.validation_message_id(:password),
     } %>
     <%= form.validation_message :password %>
   </div>
 
-  <%= form.button %>
+  <div class="flex items-center justify-between">
+    <%= form.button class: "bg-blue-500 hover:bg-blue-700 disabled:opacity-75 disabled:cursor-not-allowed text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"%>
+  </div>
 <% end %>
