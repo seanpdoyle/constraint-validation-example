@@ -8,7 +8,7 @@ class Authentication
   attribute :session
 
   validates :username, presence: true
-  validates :password, presence: true
+  validates :password, presence: true, length: { minimum: 7 }
   validate { errors.add(:base, :invalid) unless user.present? }
 
   def self.find(session)

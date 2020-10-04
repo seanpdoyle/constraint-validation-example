@@ -33,7 +33,7 @@ function reportValidity(input: FieldElement): void {
   if (input.form?.hasAttribute("novalidate")) return
 
   const id = input.getAttribute("data-validation-message")
-  const validationMessage = input.validationMessage
+  const validationMessage = getValidationMessage(input)
   const element = document.getElementById(id) || createValidationMessageFragment(input.form)
 
   if (element) {
@@ -59,6 +59,22 @@ function createValidationMessageFragment(form) {
     const template = form.querySelector("[data-validation-message-template]")
 
     return template?.content.children[0].cloneNode()
+  }
+}
+
+function getValidationMessage(input) {
+  const validationMessages = Object.entries(readValidationMessages(input))
+
+  const [ _, validationMessage ] = validationMessages.find(([ key ]) => input.validity[key]) || [ null, null ]
+
+  return validationMessage || input.validationMessage
+}
+
+function readValidationMessages(input) {
+  try {
+    return JSON.parse(input.getAttribute("data-validation-messages"))
+  } catch(_) {
+    return {}
   }
 }
 

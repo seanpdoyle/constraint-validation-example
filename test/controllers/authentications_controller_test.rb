@@ -40,7 +40,7 @@ class AuthenticationsControllerTest < ActionDispatch::IntegrationTest
     assert_nil session[:user_id]
     assert_select "input#authentication_username ~ #authentication_username_validation_message", text: "can't be blank"
     assert_select %(input[type="text"][aria-invalid="true"][aria-describedby~="authentication_username_validation_message"])
-    assert_select "input#authentication_password ~ #authentication_password_validation_message", text: "can't be blank"
+    assert_select "input#authentication_password ~ #authentication_password_validation_message", text: "can't be blank and is too short (minimum is 7 characters)"
     assert_select %(input[type="password"][aria-invalid="true"][aria-describedby~="authentication_password_validation_message"])
   end
 

@@ -23,6 +23,7 @@ module ValidationMessageExtension
     index = @options.fetch("index", @auto_index)
 
     @options["data-validation-message"] ||= tag_id(index) + "_validation_message"
+    @options["data-validation-messages"] ||= @template_object.render(formats: :json, partial: "validation_messages", locals: instance_values.symbolize_keys)
 
     super
   end
@@ -53,8 +54,8 @@ ActiveSupport.on_load :action_view do
         end
 
         [RadioButton, CheckBox].each do |kls|
-          prepend CheckableAriaTagsExtension
-          prepend ValidationMessageExtension
+          kls.prepend CheckableAriaTagsExtension
+          kls.prepend ValidationMessageExtension
         end
       end
     end
