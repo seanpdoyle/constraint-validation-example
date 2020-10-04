@@ -6,13 +6,17 @@
 
 <% if Current.user %>
   <%= form_with model: message do |form| %>
-    <%= form.label :content %>
-    <%= form.rich_text_area :content, aria: {
-      describedby: form.validation_message_id(:content),
-    } %>
-    <%= form.validation_message :content do |errors, tag| %>
-      <%= tag.span errors.to_sentence %>
+    <%= form.validation_message_template do |messages, tag| %>
+      <%= tag.span(messages.to_sentence) %>
     <% end %>
+
+    <div>
+      <%= form.label :content %>
+      <%= form.rich_text_area :content, aria: {
+        describedby: form.validation_message_id(:content),
+      } %>
+      <%= form.validation_message :content %>
+    </div>
 
     <%= form.button %>
   <% end %>
