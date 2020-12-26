@@ -24,7 +24,7 @@
       ">
 <a href="../cabc045344543ccabd6876ac541f5761c1206ed2/">              &#8592; Previous
 </a>
-<a href="../47ba0e492c16836c9ab639188d6cdaafd4bebd1c/">              Next &#8594;
+<a href="../2b77c9b5595b0741653699cfdd87d8681ecad5aa/">              Next &#8594;
 </a>      </nav>
     </header>
 
@@ -68,7 +68,7 @@
 "></a>
                 <a href="./" class="commit-node commit-node--collapsed" title="Dynamically disable invalid form submit buttons
 " aria-current="page"></a>
-                <a href="../47ba0e492c16836c9ab639188d6cdaafd4bebd1c/" class="commit-node commit-node--collapsed" title="Style with TailwindCSS
+                <a href="../2b77c9b5595b0741653699cfdd87d8681ecad5aa/" class="commit-node commit-node--collapsed" title="Style with TailwindCSS
 "></a>
             </nav>
 
@@ -138,7 +138,7 @@
 
 </a><a href="./" class="commit-node commit-node--full" aria-current="page">              <p>Dynamically disable invalid form submit buttons</p>
 
-</a><a href="../47ba0e492c16836c9ab639188d6cdaafd4bebd1c/" class="commit-node commit-node--full">              <p>Style with TailwindCSS</p>
+</a><a href="../2b77c9b5595b0741653699cfdd87d8681ecad5aa/" class="commit-node commit-node--full">              <p>Style with TailwindCSS</p>
 
 </a>        </nav>
       </details>
@@ -193,10 +193,19 @@ submit buttons based on its &ldquo;validity&rdquo;.</p>
   </summary>
 
 <div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/javascript/initializers/turbo.ts b/app/javascript/initializers/turbo.ts
-index 48ff64e..a66e9e2 100644
+index 48ff64e..0fc41d3 100644
 </span><span class="gd">--- a/app/javascript/initializers/turbo.ts
 </span><span class="gi">+++ b/app/javascript/initializers/turbo.ts
-</span><span class="p">@@ -23,9 +23,25 @@</span> addEventListener("focusout", ({ target }) =&gt; {
+</span><span class="p">@@ -6,6 +6,8 @@</span> type FieldElement =
+   HTMLSelectElement |
+   HTMLTextAreaElement
+ 
+<span class="gi">+type SubmitElement = HTMLButtonElement | HTMLInputElement
++
+</span> addEventListener("invalid", (event) =&gt; {
+   if (isFieldElement(event.target)) {
+     reportValidity(event.target)
+<span class="p">@@ -23,9 +25,25 @@</span> addEventListener("focusout", ({ target }) =&gt; {
    }
  })
  
@@ -222,7 +231,7 @@ index 48ff64e..a66e9e2 100644
 </span>   reportValidity(input)
  }
  
-<span class="p">@@ -51,9 +67,19 @@</span> function reportValidity(input: FieldElement): void {
+<span class="p">@@ -51,9 +69,19 @@</span> function reportValidity(input: FieldElement): void {
      if (!element.parentElement) {
        input.parentElement.append(element)
      }
@@ -242,13 +251,11 @@ index 48ff64e..a66e9e2 100644
 </span> function createValidationMessageFragment(form) {
    if (form) {
      const template = form.querySelector("[data-validation-message-template]")
-<span class="p">@@ -88,3 +114,9 @@</span> function isFieldElement(element: any): element is FieldElement {
+<span class="p">@@ -88,3 +116,7 @@</span> function isFieldElement(element: any): element is FieldElement {
      HTMLTextAreaElement,
    ].some(field =&gt; element instanceof field)
  }
 <span class="gi">+
-+type SubmitElement = HTMLButtonElement | HTMLInputElement
-+
 +function isSubmitElement(element: any): element is SubmitElement {
 +  return [ HTMLButtonElement, HTMLInputElement ].some(field =&gt; element instanceof field)
 +}
