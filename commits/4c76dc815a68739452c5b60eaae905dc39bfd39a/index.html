@@ -1,0 +1,455 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <title>ActionView::Helpers::FormBuilder extensions
+</title>
+    <link href="../../stylesheets/site.css" rel="stylesheet" />
+    <script src="../../javascripts/site.js"></script>
+  </head>
+  <body class="page">
+    <header class="header">
+      <h1 class="header__name">
+<a href="../../">          constraint-validation-example
+</a>      </h1>
+
+
+      <nav class="
+        header__navigation
+        navigation
+        
+      ">
+<a href="../5fa1d1117ab87280d9bcd5d03851c5dd9c520982/">              &#8592; Previous
+</a>
+<a href="../e7dcacb69eafefd590576ea283dde744230dd7d1/">              Next &#8594;
+</a>      </nav>
+    </header>
+
+    <main class="content">
+      <details class="accordion content__item">
+        <summary class="accordion__summary">
+          <div class="accordion__closed">
+            <nav class="
+              commit-history
+              u-db-overflow-y--auto
+              u-mb-overflow-x--scroll
+            ">
+                <a href="../5545fe8a221966fb48731709f57604458683afee/" class="commit-node commit-node--collapsed" title="[SKIP]: Create `git-read` GitHub Action
+"></a>
+                <a href="../848b575b23dd386b8dae7baaf0b6917248626c8c/" class="commit-node commit-node--collapsed" title="[GENERATED]: Initial Commit
+"></a>
+                <a href="../8514a28f2ae814bf83126ee296e74d75ecac774d/" class="commit-node commit-node--collapsed" title="[GENERATED]: Install ActiveStorage and ActionText
+"></a>
+                <a href="../aa205e258c1c81cf66e11af84c30fcbef4a671c8/" class="commit-node commit-node--collapsed" title="[GENERATED]: Webpacker support for Typescript
+"></a>
+                <a href="../5979fc333df3332acd92434898d83e878c8df8ef/" class="commit-node commit-node--collapsed" title="[SKIP]: Install TailwindCSS
+"></a>
+                <a href="../6c02ab3a95d59cfbe7db9d17fc4cd741a1169754/" class="commit-node commit-node--collapsed" title="Explain the project in the README.md"></a>
+                <a href="../b84a43ef9166c315e0d9007e8f1c2eeaba520145/" class="commit-node commit-node--collapsed" title="Store invalid submission parameters in the Flash
+"></a>
+                <a href="../3fb4b2762304c6772e6fb83a4b4fc0b79981bfa9/" class="commit-node commit-node--collapsed" title="Add System tests for Validation Messages A11y
+"></a>
+                <a href="../5fa1d1117ab87280d9bcd5d03851c5dd9c520982/" class="commit-node commit-node--collapsed" title="Add Users and require Authentication for messaging
+"></a>
+                <a href="./" class="commit-node commit-node--collapsed" title="ActionView::Helpers::FormBuilder extensions
+" aria-current="page"></a>
+                <a href="../e7dcacb69eafefd590576ea283dde744230dd7d1/" class="commit-node commit-node--collapsed" title="Abstract how fields reference validation messages
+"></a>
+                <a href="../e0b3ccf54edeef33bab1bf6912fa21a78e7bdcf7/" class="commit-node commit-node--collapsed" title="Abstract Validation Message ID generation
+"></a>
+                <a href="../951bb63c88105d76e7f8570cb3880c432b0a4d61/" class="commit-node commit-node--collapsed" title="Abstract Validation Message rendering
+"></a>
+                <a href="../43a623bca8ea84e063e3056d642d6712972780cc/" class="commit-node commit-node--collapsed" title="Integrate with Browser Constraint Validation API
+"></a>
+                <a href="../cabc045344543ccabd6876ac541f5761c1206ed2/" class="commit-node commit-node--collapsed" title="Validation message from server
+"></a>
+                <a href="../db7ee42b83a4319a2c07eb32dd3cc1bb7cbcc765/" class="commit-node commit-node--collapsed" title="Dynamically disable invalid form submit buttons
+"></a>
+                <a href="../47ba0e492c16836c9ab639188d6cdaafd4bebd1c/" class="commit-node commit-node--collapsed" title="Style with TailwindCSS
+"></a>
+            </nav>
+
+            <div class="accordion__toggle">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="accordion--desktop"><title>Expand History</title>
+  <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L10.293 8 4.646 2.354a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="accordion--mobile"><title>Expand History</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+            </div>
+          </div>
+
+          <div class="accordion__opened">
+            <div class="accordion__toggle accordion__toggle--fill">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="accordion--desktop"><title>Collapse History</title>
+  <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 010 .708L5.707 8l5.647 5.646a.5.5 0 01-.708.708l-6-6a.5.5 0 010-.708l6-6a.5.5 0 01.708 0z" clip-rule="evenodd"></path>
+</svg>
+
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="accordion--mobile"><title>Collapse History</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+            </div>
+          </div>
+        </summary>
+
+        <nav class="
+          commit-history
+          commit-history--full
+          u-db-overflow-y--auto
+          u-mb-overflow-x--scroll
+        ">
+<a href="../5545fe8a221966fb48731709f57604458683afee/" class="commit-node commit-node--full">              <p>[SKIP]: Create <code>git-read</code> GitHub Action</p>
+
+</a><a href="../848b575b23dd386b8dae7baaf0b6917248626c8c/" class="commit-node commit-node--full">              <p>[GENERATED]: Initial Commit</p>
+
+</a><a href="../8514a28f2ae814bf83126ee296e74d75ecac774d/" class="commit-node commit-node--full">              <p>[GENERATED]: Install ActiveStorage and ActionText</p>
+
+</a><a href="../aa205e258c1c81cf66e11af84c30fcbef4a671c8/" class="commit-node commit-node--full">              <p>[GENERATED]: Webpacker support for Typescript</p>
+
+</a><a href="../5979fc333df3332acd92434898d83e878c8df8ef/" class="commit-node commit-node--full">              <p>[SKIP]: Install TailwindCSS</p>
+
+</a><a href="../6c02ab3a95d59cfbe7db9d17fc4cd741a1169754/" class="commit-node commit-node--full">              <p>Explain the project in the README.md</p>
+
+</a><a href="../b84a43ef9166c315e0d9007e8f1c2eeaba520145/" class="commit-node commit-node--full">              <p>Store invalid submission parameters in the Flash</p>
+
+</a><a href="../3fb4b2762304c6772e6fb83a4b4fc0b79981bfa9/" class="commit-node commit-node--full">              <p>Add System tests for Validation Messages A11y</p>
+
+</a><a href="../5fa1d1117ab87280d9bcd5d03851c5dd9c520982/" class="commit-node commit-node--full">              <p>Add Users and require Authentication for messaging</p>
+
+</a><a href="./" class="commit-node commit-node--full" aria-current="page">              <p>ActionView::Helpers::FormBuilder extensions</p>
+
+</a><a href="../e7dcacb69eafefd590576ea283dde744230dd7d1/" class="commit-node commit-node--full">              <p>Abstract how fields reference validation messages</p>
+
+</a><a href="../e0b3ccf54edeef33bab1bf6912fa21a78e7bdcf7/" class="commit-node commit-node--full">              <p>Abstract Validation Message ID generation</p>
+
+</a><a href="../951bb63c88105d76e7f8570cb3880c432b0a4d61/" class="commit-node commit-node--full">              <p>Abstract Validation Message rendering</p>
+
+</a><a href="../43a623bca8ea84e063e3056d642d6712972780cc/" class="commit-node commit-node--full">              <p>Integrate with Browser Constraint Validation API</p>
+
+</a><a href="../cabc045344543ccabd6876ac541f5761c1206ed2/" class="commit-node commit-node--full">              <p>Validation message from server</p>
+
+</a><a href="../db7ee42b83a4319a2c07eb32dd3cc1bb7cbcc765/" class="commit-node commit-node--full">              <p>Dynamically disable invalid form submit buttons</p>
+
+</a><a href="../47ba0e492c16836c9ab639188d6cdaafd4bebd1c/" class="commit-node commit-node--full">              <p>Style with TailwindCSS</p>
+
+</a>        </nav>
+      </details>
+
+      <article class="
+        commit-content
+        commit-content--double
+        content__item
+        content__item--grow
+      ">
+        <section class="commit commit--message">
+
+          <h1 id="actionview-helpers-formbuilder-extensions">ActionView::Helpers::FormBuilder extensions</h1>
+
+<p>Start to abstract validation message rendering by declare a descendant
+to the <code>ActionView::Helpers::FormBuilder</code> class named
+<code>ValidationMessageFormBuilder</code>. Set it as the application&rsquo;s default by
+calling <code>default_form_builder</code> from the <code>ApplicationController</code> class.</p>
+
+<p>First and foremost, declare the <code>#errors</code> method, which retrieves
+validation messages for an attribute. When passed a block, yield the
+collection of <code>ActiveModel::Errors</code>. When no block is passed, return the
+collection of <code>ActiveModel::Errors</code>.</p>
+
+<p>Next, ensure that calls to form field builders set
+<code>[aria-invalid=&quot;true&quot;]</code> when rendering a field with error associated to
+the attribute. When rendering <code>checked</code>-capable fields like <code>&lt;input
+type=&quot;checkbox&quot;&gt;</code> and <code>&lt;input type=&quot;radio&quot;&gt;</code>, only render
+<code>[aria-invalid=&quot;true&quot;]</code> on the element that is also <code>checked</code>.</p>
+
+        </section>
+
+          <aside class="commit commit--diff commit--long-content">
+              <details
+  id="app/controllers/application_controller.rb"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse app/controllers/application_controller.rb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand app/controllers/application_controller.rb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      app/controllers/application_controller.rb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/controllers/application_controller.rb b/app/controllers/application_controller.rb
+index 9ebbc14..d2e3413 100644
+</span><span class="gd">--- a/app/controllers/application_controller.rb
+</span><span class="gi">+++ b/app/controllers/application_controller.rb
+</span><span class="p">@@ -1,5 +1,9 @@</span>
+<span class="gi">+require "./lib/validation_message_form_builder"
++
+</span> class ApplicationController &lt; ActionController::Base
+   include FlashParams
+ 
+   before_action { Current.user = Authentication.find(session) }
+<span class="gi">+
++  default_form_builder ValidationMessageFormBuilder
+</span> end
+</code></pre></div></details>
+
+              <details
+  id="app/views/authentications/new.html.erb"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse app/views/authentications/new.html.erb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand app/views/authentications/new.html.erb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      app/views/authentications/new.html.erb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/views/authentications/new.html.erb b/app/views/authentications/new.html.erb
+index 22fe7fd..7edfea0 100644
+</span><span class="gd">--- a/app/views/authentications/new.html.erb
+</span><span class="gi">+++ b/app/views/authentications/new.html.erb
+</span><span class="p">@@ -1,26 +1,24 @@</span>
+ &lt;%= form_with(model: authentication) do |form| %&gt;
+<span class="gd">-  &lt;% form.object.errors[:base].tap do |errors| %&gt;
+</span><span class="gi">+  &lt;% form.errors(:base) do |errors| %&gt;
+</span>     &lt;% if errors.any? %&gt;
+       &lt;%= tag.span errors.to_sentence, aria: { live: "assertive" } %&gt;
+     &lt;% end %&gt;
+   &lt;% end %&gt;
+ 
+<span class="gd">-  &lt;% form.object.errors[:username].tap do |errors| %&gt;
+</span><span class="gi">+  &lt;% form.errors(:username) do |errors| %&gt;
+</span>     &lt;%= form.label :username %&gt;
+     &lt;%= form.text_field :username, aria: {
+       describedby: {authentication_username_validation_message: errors.any?},
+<span class="gd">-      invalid: errors.any?
+</span>     } %&gt;
+     &lt;% if errors.any? %&gt;
+       &lt;%= tag.span errors.to_sentence, id: :authentication_username_validation_message %&gt;
+     &lt;% end %&gt;
+   &lt;% end %&gt;
+ 
+<span class="gd">-  &lt;% form.object.errors[:password].tap do |errors| %&gt;
+</span><span class="gi">+  &lt;% form.errors(:password) do |errors| %&gt;
+</span>     &lt;%= form.label :password %&gt;
+     &lt;%= form.password_field :password, aria: {
+       describedby: {authentication_password_validation_message: errors.any?},
+<span class="gd">-      invalid: errors.any?
+</span>     } %&gt;
+     &lt;% if errors.any? %&gt;
+       &lt;%= tag.span errors.to_sentence, id: :authentication_password_validation_message %&gt;
+</code></pre></div></details>
+
+              <details
+  id="app/views/messages/index.html.erb"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse app/views/messages/index.html.erb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand app/views/messages/index.html.erb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      app/views/messages/index.html.erb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/views/messages/index.html.erb b/app/views/messages/index.html.erb
+index 6d89e9c..6dc1f2a 100644
+</span><span class="gd">--- a/app/views/messages/index.html.erb
+</span><span class="gi">+++ b/app/views/messages/index.html.erb
+</span><span class="p">@@ -6,11 +6,10 @@</span>
+ 
+ &lt;% if Current.user %&gt;
+   &lt;%= form_with model: message do |form| %&gt;
+<span class="gd">-    &lt;% form.object.errors[:content].tap do |errors| %&gt;
+</span><span class="gi">+    &lt;% form.errors(:content) do |errors| %&gt;
+</span>       &lt;%= form.label :content %&gt;
+       &lt;%= form.rich_text_area :content, aria: {
+         describedby: {message_content_validation_message: errors.any?},
+<span class="gd">-        invalid: errors.any?
+</span>       } %&gt;
+       &lt;% if errors.any? %&gt;
+         &lt;%= tag.span errors.to_sentence, id: :message_content_validation_message %&gt;
+</code></pre></div></details>
+
+              <details
+  id="config/initializers/rails.rb"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse config/initializers/rails.rb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand config/initializers/rails.rb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      config/initializers/rails.rb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/config/initializers/rails.rb b/config/initializers/rails.rb
+</span><span class="p">new file mode 100644
+</span><span class="gh">index 0000000..79526f7
+</span><span class="gd">--- /dev/null
+</span><span class="gi">+++ b/config/initializers/rails.rb
+</span><span class="p">@@ -0,0 +1 @@</span>
+<span class="gi">+Dir[Rails.root.join("lib", "rails_ext", "*")].each { |path| require "rails_ext/#{File.basename(path)}" }
+</span></code></pre></div></details>
+
+              <details
+  id="lib/rails_ext/action_view.rb"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse lib/rails_ext/action_view.rb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand lib/rails_ext/action_view.rb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      lib/rails_ext/action_view.rb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/lib/rails_ext/action_view.rb b/lib/rails_ext/action_view.rb
+</span><span class="p">new file mode 100644
+</span><span class="gh">index 0000000..b09d171
+</span><span class="gd">--- /dev/null
+</span><span class="gi">+++ b/lib/rails_ext/action_view.rb
+</span><span class="p">@@ -0,0 +1,47 @@</span>
+<span class="gi">+module AriaTagsExtension
++  def render
++    if object.respond_to?(:errors) &amp;&amp; object.errors[@method_name].any?
++      @options["aria-invalid"] ||= "true"
++    end
++
++    super
++  end
++end
++
++module CheckableAriaTagsExtension
++  def render
++    if object.respond_to?(:errors) &amp;&amp; object.errors[@method_name].any?
++      @options["aria-invalid"] ||= ("true" if @options["checked"])
++    end
++
++    super
++  end
++end
++
++ActiveSupport.on_load :action_view do
++  module ActionView
++    module Helpers
++      module Tags
++        class ActionText
++          prepend AriaTagsExtension
++        end
++
++        class Select
++          prepend AriaTagsExtension
++        end
++
++        class TextField
++          prepend AriaTagsExtension
++        end
++
++        class TextArea
++          prepend AriaTagsExtension
++        end
++
++        [RadioButton, CheckBox].each do |kls|
++          prepend CheckableAriaTagsExtension
++        end
++      end
++    end
++  end
++end
+</span></code></pre></div></details>
+
+              <details
+  id="lib/validation_message_form_builder.rb"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse lib/validation_message_form_builder.rb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand lib/validation_message_form_builder.rb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      lib/validation_message_form_builder.rb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/lib/validation_message_form_builder.rb b/lib/validation_message_form_builder.rb
+</span><span class="p">new file mode 100644
+</span><span class="gh">index 0000000..e5892f1
+</span><span class="gd">--- /dev/null
+</span><span class="gi">+++ b/lib/validation_message_form_builder.rb
+</span><span class="p">@@ -0,0 +1,7 @@</span>
+<span class="gi">+class ValidationMessageFormBuilder &lt; ActionView::Helpers::FormBuilder
++  def errors(field, &amp;block)
++    validation_messages = object.respond_to?(:errors) ? object.errors[field] : []
++
++    block_given? ? yield(validation_messages) : validation_messages
++  end
++end
+</span></code></pre></div></details>
+
+          </aside>
+      </article>
+    </main>
+  </body>
+</html>

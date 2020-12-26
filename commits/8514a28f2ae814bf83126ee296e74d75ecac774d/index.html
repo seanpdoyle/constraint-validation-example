@@ -1,0 +1,498 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <title>[GENERATED]: Install ActiveStorage and ActionText
+</title>
+    <link href="../../stylesheets/site.css" rel="stylesheet" />
+    <script src="../../javascripts/site.js"></script>
+  </head>
+  <body class="page">
+    <header class="header">
+      <h1 class="header__name">
+<a href="../../">          constraint-validation-example
+</a>      </h1>
+
+
+      <nav class="
+        header__navigation
+        navigation
+        
+      ">
+<a href="../848b575b23dd386b8dae7baaf0b6917248626c8c/">              &#8592; Previous
+</a>
+<a href="../aa205e258c1c81cf66e11af84c30fcbef4a671c8/">              Next &#8594;
+</a>      </nav>
+    </header>
+
+    <main class="content">
+      <details class="accordion content__item">
+        <summary class="accordion__summary">
+          <div class="accordion__closed">
+            <nav class="
+              commit-history
+              u-db-overflow-y--auto
+              u-mb-overflow-x--scroll
+            ">
+                <a href="../5545fe8a221966fb48731709f57604458683afee/" class="commit-node commit-node--collapsed" title="[SKIP]: Create `git-read` GitHub Action
+"></a>
+                <a href="../848b575b23dd386b8dae7baaf0b6917248626c8c/" class="commit-node commit-node--collapsed" title="[GENERATED]: Initial Commit
+"></a>
+                <a href="./" class="commit-node commit-node--collapsed" title="[GENERATED]: Install ActiveStorage and ActionText
+" aria-current="page"></a>
+                <a href="../aa205e258c1c81cf66e11af84c30fcbef4a671c8/" class="commit-node commit-node--collapsed" title="[GENERATED]: Webpacker support for Typescript
+"></a>
+                <a href="../5979fc333df3332acd92434898d83e878c8df8ef/" class="commit-node commit-node--collapsed" title="[SKIP]: Install TailwindCSS
+"></a>
+                <a href="../6c02ab3a95d59cfbe7db9d17fc4cd741a1169754/" class="commit-node commit-node--collapsed" title="Explain the project in the README.md"></a>
+                <a href="../b84a43ef9166c315e0d9007e8f1c2eeaba520145/" class="commit-node commit-node--collapsed" title="Store invalid submission parameters in the Flash
+"></a>
+                <a href="../3fb4b2762304c6772e6fb83a4b4fc0b79981bfa9/" class="commit-node commit-node--collapsed" title="Add System tests for Validation Messages A11y
+"></a>
+                <a href="../5fa1d1117ab87280d9bcd5d03851c5dd9c520982/" class="commit-node commit-node--collapsed" title="Add Users and require Authentication for messaging
+"></a>
+                <a href="../4c76dc815a68739452c5b60eaae905dc39bfd39a/" class="commit-node commit-node--collapsed" title="ActionView::Helpers::FormBuilder extensions
+"></a>
+                <a href="../e7dcacb69eafefd590576ea283dde744230dd7d1/" class="commit-node commit-node--collapsed" title="Abstract how fields reference validation messages
+"></a>
+                <a href="../e0b3ccf54edeef33bab1bf6912fa21a78e7bdcf7/" class="commit-node commit-node--collapsed" title="Abstract Validation Message ID generation
+"></a>
+                <a href="../951bb63c88105d76e7f8570cb3880c432b0a4d61/" class="commit-node commit-node--collapsed" title="Abstract Validation Message rendering
+"></a>
+                <a href="../43a623bca8ea84e063e3056d642d6712972780cc/" class="commit-node commit-node--collapsed" title="Integrate with Browser Constraint Validation API
+"></a>
+                <a href="../cabc045344543ccabd6876ac541f5761c1206ed2/" class="commit-node commit-node--collapsed" title="Validation message from server
+"></a>
+                <a href="../db7ee42b83a4319a2c07eb32dd3cc1bb7cbcc765/" class="commit-node commit-node--collapsed" title="Dynamically disable invalid form submit buttons
+"></a>
+                <a href="../47ba0e492c16836c9ab639188d6cdaafd4bebd1c/" class="commit-node commit-node--collapsed" title="Style with TailwindCSS
+"></a>
+            </nav>
+
+            <div class="accordion__toggle">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="accordion--desktop"><title>Expand History</title>
+  <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L10.293 8 4.646 2.354a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="accordion--mobile"><title>Expand History</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+            </div>
+          </div>
+
+          <div class="accordion__opened">
+            <div class="accordion__toggle accordion__toggle--fill">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="accordion--desktop"><title>Collapse History</title>
+  <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 010 .708L5.707 8l5.647 5.646a.5.5 0 01-.708.708l-6-6a.5.5 0 010-.708l6-6a.5.5 0 01.708 0z" clip-rule="evenodd"></path>
+</svg>
+
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="accordion--mobile"><title>Collapse History</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+            </div>
+          </div>
+        </summary>
+
+        <nav class="
+          commit-history
+          commit-history--full
+          u-db-overflow-y--auto
+          u-mb-overflow-x--scroll
+        ">
+<a href="../5545fe8a221966fb48731709f57604458683afee/" class="commit-node commit-node--full">              <p>[SKIP]: Create <code>git-read</code> GitHub Action</p>
+
+</a><a href="../848b575b23dd386b8dae7baaf0b6917248626c8c/" class="commit-node commit-node--full">              <p>[GENERATED]: Initial Commit</p>
+
+</a><a href="./" class="commit-node commit-node--full" aria-current="page">              <p>[GENERATED]: Install ActiveStorage and ActionText</p>
+
+</a><a href="../aa205e258c1c81cf66e11af84c30fcbef4a671c8/" class="commit-node commit-node--full">              <p>[GENERATED]: Webpacker support for Typescript</p>
+
+</a><a href="../5979fc333df3332acd92434898d83e878c8df8ef/" class="commit-node commit-node--full">              <p>[SKIP]: Install TailwindCSS</p>
+
+</a><a href="../6c02ab3a95d59cfbe7db9d17fc4cd741a1169754/" class="commit-node commit-node--full">              <p>Explain the project in the README.md</p>
+
+</a><a href="../b84a43ef9166c315e0d9007e8f1c2eeaba520145/" class="commit-node commit-node--full">              <p>Store invalid submission parameters in the Flash</p>
+
+</a><a href="../3fb4b2762304c6772e6fb83a4b4fc0b79981bfa9/" class="commit-node commit-node--full">              <p>Add System tests for Validation Messages A11y</p>
+
+</a><a href="../5fa1d1117ab87280d9bcd5d03851c5dd9c520982/" class="commit-node commit-node--full">              <p>Add Users and require Authentication for messaging</p>
+
+</a><a href="../4c76dc815a68739452c5b60eaae905dc39bfd39a/" class="commit-node commit-node--full">              <p>ActionView::Helpers::FormBuilder extensions</p>
+
+</a><a href="../e7dcacb69eafefd590576ea283dde744230dd7d1/" class="commit-node commit-node--full">              <p>Abstract how fields reference validation messages</p>
+
+</a><a href="../e0b3ccf54edeef33bab1bf6912fa21a78e7bdcf7/" class="commit-node commit-node--full">              <p>Abstract Validation Message ID generation</p>
+
+</a><a href="../951bb63c88105d76e7f8570cb3880c432b0a4d61/" class="commit-node commit-node--full">              <p>Abstract Validation Message rendering</p>
+
+</a><a href="../43a623bca8ea84e063e3056d642d6712972780cc/" class="commit-node commit-node--full">              <p>Integrate with Browser Constraint Validation API</p>
+
+</a><a href="../cabc045344543ccabd6876ac541f5761c1206ed2/" class="commit-node commit-node--full">              <p>Validation message from server</p>
+
+</a><a href="../db7ee42b83a4319a2c07eb32dd3cc1bb7cbcc765/" class="commit-node commit-node--full">              <p>Dynamically disable invalid form submit buttons</p>
+
+</a><a href="../47ba0e492c16836c9ab639188d6cdaafd4bebd1c/" class="commit-node commit-node--full">              <p>Style with TailwindCSS</p>
+
+</a>        </nav>
+      </details>
+
+      <article class="
+        commit-content
+        commit-content--double
+        content__item
+        content__item--grow
+      ">
+        <section class="commit commit--message">
+
+          <h1 id="generated-install-activestorage-and-actiontext">[GENERATED]: Install ActiveStorage and ActionText</h1>
+
+<p>This commit installs and configures both
+<a href="https://edgeguides.rubyonrails.org/active_storage_overview.html"><code>active_storage</code></a> and <a href="https://edgeguides.rubyonrails.org/action_text_overview.html#installation"><code>action_text</code></a>.</p>
+
+<p>This contents were generated by executing the following commands:</p>
+<div class="highlight"><pre class="highlight shell"><code>bin/rails active_storage:install
+bin/rails action_text:install
+bin/rails action_text:install:migrations
+bin/rails db:migrate
+bin/setup
+</code></pre></div>
+        </section>
+
+          <aside class="commit commit--diff commit--long-content">
+              <details
+  id="app/javascript/packs/application.js"
+  
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse app/javascript/packs/application.js</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand app/javascript/packs/application.js</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      app/javascript/packs/application.js
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/javascript/packs/application.js b/app/javascript/packs/application.js
+index ff1c3c5..0b93167 100644
+</span><span class="gd">--- a/app/javascript/packs/application.js
+</span><span class="gi">+++ b/app/javascript/packs/application.js
+</span><span class="p">@@ -6,6 +6,8 @@</span>
+ import Rails from "@rails/ujs"
+ import Turbolinks from "turbolinks"
+ import * as ActiveStorage from "@rails/activestorage"
+<span class="gi">+import "trix"
++import "@rails/actiontext"
+</span> import "channels"
+ 
+ Rails.start()
+</code></pre></div></details>
+
+              <details
+  id="db/migrate/20201001040625_create_active_storage_tables.active_storage.rb"
+  
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse db/migrate/20201001040625_create_active_storage_tables.active_storage.rb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand db/migrate/20201001040625_create_active_storage_tables.active_storage.rb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      db/migrate/20201001040625_create_active_storage_tables.active_storage.rb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/db/migrate/20201001040625_create_active_storage_tables.active_storage.rb b/db/migrate/20201001040625_create_active_storage_tables.active_storage.rb
+</span><span class="p">new file mode 100644
+</span><span class="gh">index 0000000..8779826
+</span><span class="gd">--- /dev/null
+</span><span class="gi">+++ b/db/migrate/20201001040625_create_active_storage_tables.active_storage.rb
+</span><span class="p">@@ -0,0 +1,36 @@</span>
+<span class="gi">+# This migration comes from active_storage (originally 20170806125915)
++class CreateActiveStorageTables &lt; ActiveRecord::Migration[5.2]
++  def change
++    create_table :active_storage_blobs do |t|
++      t.string   :key,          null: false
++      t.string   :filename,     null: false
++      t.string   :content_type
++      t.text     :metadata
++      t.string   :service_name, null: false
++      t.bigint   :byte_size,    null: false
++      t.string   :checksum,     null: false
++      t.datetime :created_at,   null: false
++
++      t.index [ :key ], unique: true
++    end
++
++    create_table :active_storage_attachments do |t|
++      t.string     :name,     null: false
++      t.references :record,   null: false, polymorphic: true, index: false
++      t.references :blob,     null: false
++
++      t.datetime :created_at, null: false
++
++      t.index [ :record_type, :record_id, :name, :blob_id ], name: "index_active_storage_attachments_uniqueness", unique: true
++      t.foreign_key :active_storage_blobs, column: :blob_id
++    end
++
++    create_table :active_storage_variant_records do |t|
++      t.belongs_to :blob, null: false, index: false
++      t.string :variation_digest, null: false
++
++      t.index %i[ blob_id variation_digest ], name: "index_active_storage_variant_records_uniqueness", unique: true
++      t.foreign_key :active_storage_blobs, column: :blob_id
++    end
++  end
++end
+</span></code></pre></div></details>
+
+              <details
+  id="db/migrate/20201001040643_create_action_text_tables.action_text.rb"
+  
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse db/migrate/20201001040643_create_action_text_tables.action_text.rb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand db/migrate/20201001040643_create_action_text_tables.action_text.rb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      db/migrate/20201001040643_create_action_text_tables.action_text.rb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/db/migrate/20201001040643_create_action_text_tables.action_text.rb b/db/migrate/20201001040643_create_action_text_tables.action_text.rb
+</span><span class="p">new file mode 100644
+</span><span class="gh">index 0000000..5dfbd15
+</span><span class="gd">--- /dev/null
+</span><span class="gi">+++ b/db/migrate/20201001040643_create_action_text_tables.action_text.rb
+</span><span class="p">@@ -0,0 +1,14 @@</span>
+<span class="gi">+# This migration comes from action_text (originally 20180528164100)
++class CreateActionTextTables &lt; ActiveRecord::Migration[6.0]
++  def change
++    create_table :action_text_rich_texts do |t|
++      t.string     :name, null: false
++      t.text       :body, size: :long
++      t.references :record, null: false, polymorphic: true, index: false
++
++      t.timestamps
++
++      t.index [ :record_type, :record_id, :name ], name: "index_action_text_rich_texts_uniqueness", unique: true
++    end
++  end
++end
+</span></code></pre></div></details>
+
+              <details
+  id="db/schema.rb"
+  
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse db/schema.rb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand db/schema.rb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      db/schema.rb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/db/schema.rb b/db/schema.rb
+</span><span class="p">new file mode 100644
+</span><span class="gh">index 0000000..2daeec1
+</span><span class="gd">--- /dev/null
+</span><span class="gi">+++ b/db/schema.rb
+</span><span class="p">@@ -0,0 +1,58 @@</span>
+<span class="gi">+# This file is auto-generated from the current state of the database. Instead
++# of editing this file, please use the migrations feature of Active Record to
++# incrementally modify your database, and then regenerate this schema definition.
++#
++# This file is the source Rails uses to define your schema when running `bin/rails
++# db:schema:load`. When creating a new database, `bin/rails db:schema:load` tends to
++# be faster and is potentially less error prone than running all of your
++# migrations from scratch. Old migrations may fail to apply correctly if those
++# migrations use external dependencies or application code.
++#
++# It's strongly recommended that you check this file into your version control system.
++
++ActiveRecord::Schema.define(version: 2020_10_01_040643) do
++
++  # These are extensions that must be enabled in order to support this database
++  enable_extension "plpgsql"
++
++  create_table "action_text_rich_texts", force: :cascade do |t|
++    t.string "name", null: false
++    t.text "body"
++    t.string "record_type", null: false
++    t.bigint "record_id", null: false
++    t.datetime "created_at", precision: 6, null: false
++    t.datetime "updated_at", precision: 6, null: false
++    t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
++  end
++
++  create_table "active_storage_attachments", force: :cascade do |t|
++    t.string "name", null: false
++    t.string "record_type", null: false
++    t.bigint "record_id", null: false
++    t.bigint "blob_id", null: false
++    t.datetime "created_at", null: false
++    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
++    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
++  end
++
++  create_table "active_storage_blobs", force: :cascade do |t|
++    t.string "key", null: false
++    t.string "filename", null: false
++    t.string "content_type"
++    t.text "metadata"
++    t.string "service_name", null: false
++    t.bigint "byte_size", null: false
++    t.string "checksum", null: false
++    t.datetime "created_at", null: false
++    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
++  end
++
++  create_table "active_storage_variant_records", force: :cascade do |t|
++    t.bigint "blob_id", null: false
++    t.string "variation_digest", null: false
++    t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
++  end
++
++  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
++  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
++end
+</span></code></pre></div></details>
+
+              <details
+  id="package.json"
+  
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse package.json</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand package.json</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      package.json
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/package.json b/package.json
+index dbabad9..9ff1d78 100644
+</span><span class="gd">--- a/package.json
+</span><span class="gi">+++ b/package.json
+</span><span class="p">@@ -3,9 +3,11 @@</span>
+   "private": true,
+   "dependencies": {
+     "@rails/actioncable": "^6.0.0",
+<span class="gi">+    "@rails/actiontext": "^6.0.0",
+</span>     "@rails/activestorage": "^6.0.0",
+     "@rails/ujs": "^6.0.0",
+     "@rails/webpacker": "5.1.1",
+<span class="gi">+    "trix": "^1.3.0",
+</span>     "turbolinks": "^5.2.0"
+   },
+   "version": "0.1.0",
+</code></pre></div></details>
+
+              <details
+  id="yarn.lock"
+  
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse yarn.lock</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand yarn.lock</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      yarn.lock
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/yarn.lock b/yarn.lock
+index fe429bb..cac1b25 100644
+</span><span class="gd">--- a/yarn.lock
+</span><span class="gi">+++ b/yarn.lock
+</span><span class="p">@@ -848,7 +848,14 @@</span>
+   resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-6.0.3.tgz#722b4b639936129307ddbab3a390f6bcacf3e7bc"
+   integrity sha512-I01hgqxxnOgOtJTGlq0ZsGJYiTEEiSGVEGQn3vimZSqEP1HqzyFNbzGTq14Xdyeow2yGJjygjoFF1pmtE+SQaw==
+ 
+<span class="gd">-"@rails/activestorage@^6.0.0":
+</span><span class="gi">+"@rails/actiontext@^6.0.0":
++  version "6.0.3"
++  resolved "https://registry.yarnpkg.com/@rails/actiontext/-/actiontext-6.0.3.tgz#71dacd49df7c16a363e20aa89a53efcad8fcecde"
++  integrity sha512-z6NtXRd/Scoqkf8ZRThEZhAUPh/+Yk8knsLgqlGBRXqxth1LToEWubzSeac4b26TDNgVbbTTm7BtLE/R5R4wbA==
++  dependencies:
++    "@rails/activestorage" "^6.0.0-alpha"
++
++"@rails/activestorage@^6.0.0", "@rails/activestorage@^6.0.0-alpha":
+</span>   version "6.0.3"
+   resolved "https://registry.yarnpkg.com/@rails/activestorage/-/activestorage-6.0.3.tgz#401d2a28ecb7167cdb5e830ffddaa17c308c31aa"
+   integrity sha512-YdNwyfryHlcKj7Ruix89wZ2aiN3KTYULdW1Y/hNlHJlrY2/PXjT2YBTzZiVd+dcjrwHBsXV2rExdy+Z/lsrlEg==
+<span class="p">@@ -7031,6 +7038,11 @@</span> trim-newlines@^1.0.0:
+   resolved "https://registry.yarnpkg.com/trim-newlines/-/trim-newlines-1.0.0.tgz#5887966bb582a4503a41eb524f7d35011815a613"
+   integrity sha1-WIeWa7WCpFA6QetST301ARgVphM=
+ 
+<span class="gi">+trix@^1.3.0:
++  version "1.3.0"
++  resolved "https://registry.yarnpkg.com/trix/-/trix-1.3.0.tgz#8683b573b49828ffbf1f9aaa289283b37edde85f"
++  integrity sha512-kXdNyWZdZkLlKSJ71gL6C9qXedNHbF5SXk4ngPvGhT9J1WCwCq5bnXe/9WvVwX3BMVnPmyRqJMKCIXxr7M4vDA==
++
+</span> "true-case-path@^1.0.2":
+   version "1.0.3"
+   resolved "https://registry.yarnpkg.com/true-case-path/-/true-case-path-1.0.3.tgz#f813b5a8c86b40da59606722b144e3225799f47d"
+</code></pre></div></details>
+
+          </aside>
+      </article>
+    </main>
+  </body>
+</html>
