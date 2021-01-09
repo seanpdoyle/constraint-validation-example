@@ -1,0 +1,1147 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <title>Store invalid submission parameters in the Flash
+</title>
+    <link href="../../stylesheets/site.css" rel="stylesheet" />
+    <script src="../../javascripts/site.js"></script>
+  </head>
+  <body class="page">
+    <header class="header">
+      <h1 class="header__name">
+<a href="../../">          constraint-validation-example
+</a>      </h1>
+
+
+      <nav class="
+        header__navigation
+        navigation
+        
+      ">
+<a href="../ca31f0105d5a8a8e2beafcb7d4502329cb9290cd/">              &#8592; Previous
+</a>
+<a href="../fdd439a3370b7316ab981dca43a56195f22048c1/">              Next &#8594;
+</a>      </nav>
+    </header>
+
+    <main class="content">
+      <details class="accordion content__item">
+        <summary class="accordion__summary">
+          <div class="accordion__closed">
+            <nav class="
+              commit-history
+              u-db-overflow-y--auto
+              u-mb-overflow-x--scroll
+            ">
+                <a href="../df690458a353f4a2d7d5406bfb17d6c866a01eb9/" class="commit-node commit-node--collapsed" title="[SKIP]: Create `git-read` GitHub Action
+"></a>
+                <a href="../838be13608ca7728ef02691bf7c9662983859034/" class="commit-node commit-node--collapsed" title="[GENERATED]: Initial Commit
+"></a>
+                <a href="../1b2273b26f1ba1d4c8b8e13e2df68032abfa2e52/" class="commit-node commit-node--collapsed" title="[GENERATED]: Install ActiveStorage and ActionText
+"></a>
+                <a href="../80280feaf26536f46ad9ceb3234b4a03cfa5cde7/" class="commit-node commit-node--collapsed" title="[GENERATED]: Webpacker support for Typescript
+"></a>
+                <a href="../d97f90d3962aa14f7ff114f8721dcf3a028686da/" class="commit-node commit-node--collapsed" title="[SKIP]: Install TailwindCSS
+"></a>
+                <a href="../ca31f0105d5a8a8e2beafcb7d4502329cb9290cd/" class="commit-node commit-node--collapsed" title="Explain the project in the README.md"></a>
+                <a href="./" class="commit-node commit-node--collapsed" title="Store invalid submission parameters in the Flash
+" aria-current="page"></a>
+                <a href="../fdd439a3370b7316ab981dca43a56195f22048c1/" class="commit-node commit-node--collapsed" title="Add System tests for Validation Messages A11y
+"></a>
+                <a href="../0066995816650284f08abcaa79b4e9e9c28a2fca/" class="commit-node commit-node--collapsed" title="Add Users and require Authentication for messaging
+"></a>
+                <a href="../cfccd1d7073089bf276713751ff67e4bfc3c4169/" class="commit-node commit-node--collapsed" title="ActionView::Helpers::FormBuilder extensions
+"></a>
+                <a href="../de91a14dffbf6fb7eb2387041d8aac4920bade15/" class="commit-node commit-node--collapsed" title="Abstract how fields reference validation messages
+"></a>
+                <a href="../bb788857f8347a538d0c822eccef81557362fa6f/" class="commit-node commit-node--collapsed" title="Abstract Validation Message ID generation
+"></a>
+                <a href="../0db6f5247d9a5edd25de5dcf19a2da85ad881ec2/" class="commit-node commit-node--collapsed" title="Abstract Validation Message rendering
+"></a>
+                <a href="../54922ffc20ff2554ab323401894984c98af4e273/" class="commit-node commit-node--collapsed" title="Integrate with Browser Constraint Validation API
+"></a>
+                <a href="../55be92feea8285636f13e4bc861e85210ea3bda4/" class="commit-node commit-node--collapsed" title="Validation message from server
+"></a>
+                <a href="../2e1a758b24bfe7d0b161817346c92134562aeba8/" class="commit-node commit-node--collapsed" title="Dynamically disable invalid form submit buttons
+"></a>
+                <a href="../6da5186702f274c8b35625b6e5a040fe481a0695/" class="commit-node commit-node--collapsed" title="Style with TailwindCSS
+"></a>
+            </nav>
+
+            <div class="accordion__toggle">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="accordion--desktop"><title>Expand History</title>
+  <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L10.293 8 4.646 2.354a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="accordion--mobile"><title>Expand History</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+            </div>
+          </div>
+
+          <div class="accordion__opened">
+            <div class="accordion__toggle accordion__toggle--fill">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="accordion--desktop"><title>Collapse History</title>
+  <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 010 .708L5.707 8l5.647 5.646a.5.5 0 01-.708.708l-6-6a.5.5 0 010-.708l6-6a.5.5 0 01.708 0z" clip-rule="evenodd"></path>
+</svg>
+
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="accordion--mobile"><title>Collapse History</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+            </div>
+          </div>
+        </summary>
+
+        <nav class="
+          commit-history
+          commit-history--full
+          u-db-overflow-y--auto
+          u-mb-overflow-x--scroll
+        ">
+<a href="../df690458a353f4a2d7d5406bfb17d6c866a01eb9/" class="commit-node commit-node--full">              <p>[SKIP]: Create <code>git-read</code> GitHub Action</p>
+
+</a><a href="../838be13608ca7728ef02691bf7c9662983859034/" class="commit-node commit-node--full">              <p>[GENERATED]: Initial Commit</p>
+
+</a><a href="../1b2273b26f1ba1d4c8b8e13e2df68032abfa2e52/" class="commit-node commit-node--full">              <p>[GENERATED]: Install ActiveStorage and ActionText</p>
+
+</a><a href="../80280feaf26536f46ad9ceb3234b4a03cfa5cde7/" class="commit-node commit-node--full">              <p>[GENERATED]: Webpacker support for Typescript</p>
+
+</a><a href="../d97f90d3962aa14f7ff114f8721dcf3a028686da/" class="commit-node commit-node--full">              <p>[SKIP]: Install TailwindCSS</p>
+
+</a><a href="../ca31f0105d5a8a8e2beafcb7d4502329cb9290cd/" class="commit-node commit-node--full">              <p>Explain the project in the README.md</p>
+
+</a><a href="./" class="commit-node commit-node--full" aria-current="page">              <p>Store invalid submission parameters in the Flash</p>
+
+</a><a href="../fdd439a3370b7316ab981dca43a56195f22048c1/" class="commit-node commit-node--full">              <p>Add System tests for Validation Messages A11y</p>
+
+</a><a href="../0066995816650284f08abcaa79b4e9e9c28a2fca/" class="commit-node commit-node--full">              <p>Add Users and require Authentication for messaging</p>
+
+</a><a href="../cfccd1d7073089bf276713751ff67e4bfc3c4169/" class="commit-node commit-node--full">              <p>ActionView::Helpers::FormBuilder extensions</p>
+
+</a><a href="../de91a14dffbf6fb7eb2387041d8aac4920bade15/" class="commit-node commit-node--full">              <p>Abstract how fields reference validation messages</p>
+
+</a><a href="../bb788857f8347a538d0c822eccef81557362fa6f/" class="commit-node commit-node--full">              <p>Abstract Validation Message ID generation</p>
+
+</a><a href="../0db6f5247d9a5edd25de5dcf19a2da85ad881ec2/" class="commit-node commit-node--full">              <p>Abstract Validation Message rendering</p>
+
+</a><a href="../54922ffc20ff2554ab323401894984c98af4e273/" class="commit-node commit-node--full">              <p>Integrate with Browser Constraint Validation API</p>
+
+</a><a href="../55be92feea8285636f13e4bc861e85210ea3bda4/" class="commit-node commit-node--full">              <p>Validation message from server</p>
+
+</a><a href="../2e1a758b24bfe7d0b161817346c92134562aeba8/" class="commit-node commit-node--full">              <p>Dynamically disable invalid form submit buttons</p>
+
+</a><a href="../6da5186702f274c8b35625b6e5a040fe481a0695/" class="commit-node commit-node--full">              <p>Style with TailwindCSS</p>
+
+</a>        </nav>
+      </details>
+
+      <article class="
+        commit-content
+        commit-content--double
+        content__item
+        content__item--grow
+      ">
+        <section class="commit commit--message">
+
+          <h1 id="store-invalid-submission-parameters-in-the-flash">Store invalid submission parameters in the Flash</h1>
+
+<h2 id="new-dependencies">New Dependencies</h2>
+
+<p>First, add the <code>turbo</code> gem and a <code>dev-build</code> of the
+<code>basecamp/turbolinks</code> release of Turbolinks 6 alpha.</p>
+
+<p>Next, remove <code>@rails/ujs</code> from the <code>package.json</code> and remove the
+<code>import</code> and call to <code>Rails.start()</code>. Most of the value of Rails
+Unobtrusive JavaScript will be replaced by Turbolinks, either through
+the new <code>turbolinks:submit-start</code> and <code>turbolinks:submit-end</code> events or
+other existing <code>turbolinks:</code>-prefixed events.</p>
+
+<p>Finally, add <code>activerecord-session_store</code> and use it to replace the
+<a href="https://edgeapi.rubyonrails.org/classes/ActionDispatch/Session/CookieStore.html">cookie store</a>.</p>
+
+<h2 id="implementation-details">Implementation details</h2>
+
+<p>Turbolinks 6 will require that every form submission response results in
+a redirect or a visit. This is incompatible with the popular Rails
+pattern of in-place HTML rendering with a call to <code>render :new</code> or
+<code>render :edit</code> (from a <code>#create</code> or <code>#update</code> action, respectively).</p>
+
+<p>As an alternative to relying on a <code>ActiveModel</code> or <code>ActiveRecord</code>
+instance state, write the parameters submitted to the <code>messages#create</code>
+action to the (ActiveRecord::SessionStore-backed) Flash under the
+<code>params:</code> key.</p>
+
+<p>This extension is scoped to the <code>FlashParams</code> controller concern.</p>
+
+<p>Next, once redirected to the <code>messages#index</code>, read the parameters from
+<code>flash[:params]</code>, and pass those to <code>Message.restore_submission</code>. Within
+<code>Message.restore_submission</code>, assign the attributes and call <code>#validate</code>
+so that the record is marked as invalid and the error messages are
+available for the <code>form_with</code> call in the <code>messages#index</code> template.</p>
+
+<p>In cases where a visit to <code>messages#index</code> is <em>not</em> a result of a invalid
+form submission, but is instead a direct visit, skip the call to
+<code>#validate</code>.</p>
+
+<p>This extension is scoped to the <code>Restorable</code> model concern.</p>
+
+<h2 id="aria-attributes-for-invalid-forms">ARIA attributes for invalid forms</h2>
+
+<p>To set a baseline for this example application&rsquo;s Accessibility (<abbr
+title="Accessibility">a11y</abbr>), ensure that the <code>&lt;input
+type=&quot;text&quot;&gt;</code> element that captures the value for <code>content</code> declares an
+<code>aria-describedby</code> attribute that references a <code>&lt;span&gt;</code> element with a
+matching <code>[id]</code> attribute that renders the error message.</p>
+
+        </section>
+
+          <aside class="commit commit--diff commit--long-content">
+              <details
+  id="Gemfile"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse Gemfile</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand Gemfile</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      Gemfile
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/Gemfile b/Gemfile
+index 025dcb7..c63f18f 100644
+</span><span class="gd">--- a/Gemfile
+</span><span class="gi">+++ b/Gemfile
+</span><span class="p">@@ -14,8 +14,8 @@</span> gem 'sass-rails', '&gt;= 6'
+ # Use development version of Webpacker
+ gem 'webpacker', github: 'rails/webpacker'
+ 
+<span class="gd">-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+-gem 'turbolinks', '~&gt; 5'
+</span><span class="gi">+# Turbo makes navigating your web application faster. Read more: https://github.com/hotwired/turbo-rails
++gem 'turbo-rails'
+</span> # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+ gem 'jbuilder', '~&gt; 2.7'
+ # Use Redis adapter to run Action Cable in production
+<span class="p">@@ -29,6 +29,8 @@</span> gem 'jbuilder', '~&gt; 2.7'
+ # Reduces boot times through caching; required in config/boot.rb
+ gem 'bootsnap', '&gt;= 1.4.4', require: false
+ 
+<span class="gi">+gem 'activerecord-session_store'
++
+</span> group :development, :test do
+   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+</code></pre></div></details>
+
+              <details
+  id="Gemfile.lock"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse Gemfile.lock</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand Gemfile.lock</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      Gemfile.lock
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/Gemfile.lock b/Gemfile.lock
+index 06f5244..663218b 100644
+</span><span class="gd">--- a/Gemfile.lock
+</span><span class="gi">+++ b/Gemfile.lock
+</span><span class="p">@@ -106,6 +106,12 @@</span> GIT
+ GEM
+   remote: https://rubygems.org/
+   specs:
+<span class="gi">+    activerecord-session_store (1.1.3)
++      actionpack (&gt;= 4.0)
++      activerecord (&gt;= 4.0)
++      multi_json (~&gt; 1.11, &gt;= 1.11.2)
++      rack (&gt;= 1.5.2, &lt; 3)
++      railties (&gt;= 4.0)
+</span>     addressable (2.7.0)
+       public_suffix (&gt;= 2.0.2, &lt; 5.0)
+     bindex (0.8.1)
+<span class="p">@@ -148,6 +154,7 @@</span> GEM
+     mini_portile2 (2.4.0)
+     minitest (5.14.2)
+     msgpack (1.3.3)
+<span class="gi">+    multi_json (1.15.0)
+</span>     nio4r (2.5.4)
+     nokogiri (1.10.10)
+       mini_portile2 (~&gt; 2.4.0)
+<span class="p">@@ -197,10 +204,9 @@</span> GEM
+       sprockets (&gt;= 3.0.0)
+     thor (1.0.1)
+     tilt (2.0.10)
+<span class="gd">-    turbolinks (5.2.1)
+-      turbolinks-source (~&gt; 5.2)
+-    turbolinks-source (5.2.0)
+-    tzinfo (2.0.4)
+</span><span class="gi">+    turbo-rails (0.5.1)
++      rails (&gt;= 6.0.0)
++    tzinfo (2.0.2)
+</span>       concurrent-ruby (~&gt; 1.0)
+     webdrivers (4.4.1)
+       nokogiri (~&gt; 1.6)
+<span class="p">@@ -217,6 +223,7 @@</span> PLATFORMS
+   ruby
+ 
+ DEPENDENCIES
+<span class="gi">+  activerecord-session_store
+</span>   bootsnap (&gt;= 1.4.4)
+   byebug
+   capybara (&gt;= 3.26)
+<span class="p">@@ -229,7 +236,7 @@</span> DEPENDENCIES
+   sass-rails (&gt;= 6)
+   selenium-webdriver
+   spring
+<span class="gd">-  turbolinks (~&gt; 5)
+</span><span class="gi">+  turbo-rails
+</span>   tzinfo-data
+   web-console!
+   webdrivers
+</code></pre></div></details>
+
+              <details
+  id="app/controllers/application_controller.rb"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse app/controllers/application_controller.rb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand app/controllers/application_controller.rb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      app/controllers/application_controller.rb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/controllers/application_controller.rb b/app/controllers/application_controller.rb
+index 09705d1..6242faf 100644
+</span><span class="gd">--- a/app/controllers/application_controller.rb
+</span><span class="gi">+++ b/app/controllers/application_controller.rb
+</span><span class="p">@@ -1,2 +1,3 @@</span>
+ class ApplicationController &lt; ActionController::Base
+<span class="gi">+  include FlashParams
+</span> end
+</code></pre></div></details>
+
+              <details
+  id="app/controllers/concerns/flash_params.rb"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse app/controllers/concerns/flash_params.rb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand app/controllers/concerns/flash_params.rb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      app/controllers/concerns/flash_params.rb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/controllers/concerns/flash_params.rb b/app/controllers/concerns/flash_params.rb
+</span><span class="p">new file mode 100644
+</span><span class="gh">index 0000000..9b3507a
+</span><span class="gd">--- /dev/null
+</span><span class="gi">+++ b/app/controllers/concerns/flash_params.rb
+</span><span class="p">@@ -0,0 +1,14 @@</span>
+<span class="gi">+module FlashParams
++  extend ActiveSupport::Concern
++
++  included do
++    self._flash_types += [:params]
++
++    def params
++      flash_params = flash[:params].to_h
++      request_params = super.to_unsafe_hash
++
++      ActionController::Parameters.new(request_params.deep_merge(flash_params))
++    end
++  end
++end
+</span></code></pre></div></details>
+
+              <details
+  id="app/controllers/messages_controller.rb"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse app/controllers/messages_controller.rb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand app/controllers/messages_controller.rb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      app/controllers/messages_controller.rb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/controllers/messages_controller.rb b/app/controllers/messages_controller.rb
+</span><span class="p">new file mode 100644
+</span><span class="gh">index 0000000..27fd30a
+</span><span class="gd">--- /dev/null
+</span><span class="gi">+++ b/app/controllers/messages_controller.rb
+</span><span class="p">@@ -0,0 +1,24 @@</span>
+<span class="gi">+class MessagesController &lt; ApplicationController
++  def create
++    message = Message.new(message_params)
++
++    if message.save
++      redirect_to messages_url
++    else
++      redirect_to messages_url, params: { message: message_params }
++    end
++  end
++
++  def index
++    messages = Message.all
++    message = Message.restore_submission(message_params)
++
++    render locals: { messages: messages, message: message }
++  end
++
++  private
++
++  def message_params
++    params.fetch(:message, {}).permit(:content)
++  end
++end
+</span></code></pre></div></details>
+
+              <details
+  id="app/javascript/packs/application.js"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse app/javascript/packs/application.js</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand app/javascript/packs/application.js</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      app/javascript/packs/application.js
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/javascript/packs/application.js b/app/javascript/packs/application.js
+index 0b93167..50f0126 100644
+</span><span class="gd">--- a/app/javascript/packs/application.js
+</span><span class="gi">+++ b/app/javascript/packs/application.js
+</span><span class="p">@@ -3,15 +3,12 @@</span>
+ // a relevant structure within app/javascript and only use these pack files to reference
+ // that code so it'll be compiled.
+ 
+<span class="gd">-import Rails from "@rails/ujs"
+-import Turbolinks from "turbolinks"
+</span><span class="gi">+import "@hotwired/turbo-rails"
+</span> import * as ActiveStorage from "@rails/activestorage"
+ import "trix"
+ import "@rails/actiontext"
+ import "channels"
+ 
+<span class="gd">-Rails.start()
+-Turbolinks.start()
+</span> ActiveStorage.start()
+ 
+ // Uncomment to copy all static images under ../images to the output folder and reference
+</code></pre></div></details>
+
+              <details
+  id="app/models/application_record.rb"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse app/models/application_record.rb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand app/models/application_record.rb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      app/models/application_record.rb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/models/application_record.rb b/app/models/application_record.rb
+index 10a4cba..cb07a57 100644
+</span><span class="gd">--- a/app/models/application_record.rb
+</span><span class="gi">+++ b/app/models/application_record.rb
+</span><span class="p">@@ -1,3 +1,5 @@</span>
+ class ApplicationRecord &lt; ActiveRecord::Base
+<span class="gi">+  include Restorable
++
+</span>   self.abstract_class = true
+ end
+</code></pre></div></details>
+
+              <details
+  id="app/models/concerns/restorable.rb"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse app/models/concerns/restorable.rb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand app/models/concerns/restorable.rb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      app/models/concerns/restorable.rb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/models/concerns/restorable.rb b/app/models/concerns/restorable.rb
+</span><span class="p">new file mode 100644
+</span><span class="gh">index 0000000..0ad362d
+</span><span class="gd">--- /dev/null
+</span><span class="gi">+++ b/app/models/concerns/restorable.rb
+</span><span class="p">@@ -0,0 +1,9 @@</span>
+<span class="gi">+module Restorable
++  extend ActiveSupport::Concern
++
++  class_methods do
++    def restore_submission(attributes)
++      new(attributes).tap { |model| model.validate unless attributes.empty? }
++    end
++  end
++end
+</span></code></pre></div></details>
+
+              <details
+  id="app/models/message.rb"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse app/models/message.rb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand app/models/message.rb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      app/models/message.rb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/models/message.rb b/app/models/message.rb
+</span><span class="p">new file mode 100644
+</span><span class="gh">index 0000000..1ed7734
+</span><span class="gd">--- /dev/null
+</span><span class="gi">+++ b/app/models/message.rb
+</span><span class="p">@@ -0,0 +1,5 @@</span>
+<span class="gi">+class Message &lt; ApplicationRecord
++  has_rich_text :content
++
++  validates :content, presence: true
++end
+</span></code></pre></div></details>
+
+              <details
+  id="app/views/layouts/application.html.erb"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse app/views/layouts/application.html.erb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand app/views/layouts/application.html.erb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      app/views/layouts/application.html.erb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/views/layouts/application.html.erb b/app/views/layouts/application.html.erb
+index 9953ef5..7beff8f 100644
+</span><span class="gd">--- a/app/views/layouts/application.html.erb
+</span><span class="gi">+++ b/app/views/layouts/application.html.erb
+</span><span class="p">@@ -6,8 +6,8 @@</span>
+     &lt;%= csrf_meta_tags %&gt;
+     &lt;%= csp_meta_tag %&gt;
+ 
+<span class="gd">-    &lt;%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %&gt;
+-    &lt;%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %&gt;
+</span><span class="gi">+    &lt;%= stylesheet_pack_tag 'application', media: 'all', 'data-turbo-track': 'reload' %&gt;
++    &lt;%= javascript_pack_tag 'application', 'data-turbo-track': 'reload' %&gt;
+</span>   &lt;/head&gt;
+ 
+   &lt;body&gt;
+</code></pre></div></details>
+
+              <details
+  id="app/views/messages/index.html.erb"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse app/views/messages/index.html.erb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand app/views/messages/index.html.erb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      app/views/messages/index.html.erb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/views/messages/index.html.erb b/app/views/messages/index.html.erb
+</span><span class="p">new file mode 100644
+</span><span class="gh">index 0000000..4f44a89
+</span><span class="gd">--- /dev/null
+</span><span class="gi">+++ b/app/views/messages/index.html.erb
+</span><span class="p">@@ -0,0 +1,20 @@</span>
+<span class="gi">+&lt;ul&gt;
++  &lt;% messages.each do |message| %&gt;
++    &lt;li&gt;&lt;%= message.content %&gt;&lt;/li&gt;
++  &lt;% end %&gt;
++&lt;/ul&gt;
++
++&lt;%= form_with model: message do |form| %&gt;
++  &lt;% form.object.errors[:content].tap do |errors| %&gt;
++    &lt;%= form.label :content %&gt;
++    &lt;%= form.rich_text_area :content, aria: {
++      describedby: {message_content_validation_message: errors.any?},
++      invalid: errors.any?
++    } %&gt;
++    &lt;% if errors.any? %&gt;
++      &lt;%= tag.span errors.to_sentence, id: :message_content_validation_message %&gt;
++    &lt;% end %&gt;
++  &lt;% end %&gt;
++
++  &lt;%= form.button %&gt;
++&lt;% end %&gt;
+</span></code></pre></div></details>
+
+              <details
+  id="config/initializers/session_store.rb"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse config/initializers/session_store.rb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand config/initializers/session_store.rb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      config/initializers/session_store.rb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/config/initializers/session_store.rb b/config/initializers/session_store.rb
+</span><span class="p">new file mode 100644
+</span><span class="gh">index 0000000..c00dbf3
+</span><span class="gd">--- /dev/null
+</span><span class="gi">+++ b/config/initializers/session_store.rb
+</span><span class="p">@@ -0,0 +1 @@</span>
+<span class="gi">+Rails.application.config.session_store :active_record_store, :key =&gt; '_constraint_validation_example_session'
+</span></code></pre></div></details>
+
+              <details
+  id="config/routes.rb"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse config/routes.rb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand config/routes.rb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      config/routes.rb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/config/routes.rb b/config/routes.rb
+index c06383a..37345a4 100644
+</span><span class="gd">--- a/config/routes.rb
+</span><span class="gi">+++ b/config/routes.rb
+</span><span class="p">@@ -1,3 +1,6 @@</span>
+ Rails.application.routes.draw do
+   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+<span class="gi">+  resources :messages, only: [:index, :create]
++
++  root to: redirect("/messages")
+</span> end
+</code></pre></div></details>
+
+              <details
+  id="db/migrate/20201003194927_add_sessions_table.rb"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse db/migrate/20201003194927_add_sessions_table.rb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand db/migrate/20201003194927_add_sessions_table.rb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      db/migrate/20201003194927_add_sessions_table.rb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/db/migrate/20201003194927_add_sessions_table.rb b/db/migrate/20201003194927_add_sessions_table.rb
+</span><span class="p">new file mode 100644
+</span><span class="gh">index 0000000..855e0c0
+</span><span class="gd">--- /dev/null
+</span><span class="gi">+++ b/db/migrate/20201003194927_add_sessions_table.rb
+</span><span class="p">@@ -0,0 +1,12 @@</span>
+<span class="gi">+class AddSessionsTable &lt; ActiveRecord::Migration[6.1]
++  def change
++    create_table :sessions do |t|
++      t.string :session_id, :null =&gt; false
++      t.text :data
++      t.timestamps
++    end
++
++    add_index :sessions, :session_id, :unique =&gt; true
++    add_index :sessions, :updated_at
++  end
++end
+</span></code></pre></div></details>
+
+              <details
+  id="db/migrate/20201004015757_create_messages.rb"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse db/migrate/20201004015757_create_messages.rb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand db/migrate/20201004015757_create_messages.rb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      db/migrate/20201004015757_create_messages.rb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/db/migrate/20201004015757_create_messages.rb b/db/migrate/20201004015757_create_messages.rb
+</span><span class="p">new file mode 100644
+</span><span class="gh">index 0000000..f772f3f
+</span><span class="gd">--- /dev/null
+</span><span class="gi">+++ b/db/migrate/20201004015757_create_messages.rb
+</span><span class="p">@@ -0,0 +1,7 @@</span>
+<span class="gi">+class CreateMessages &lt; ActiveRecord::Migration[6.1]
++  def change
++    create_table :messages do |t|
++      t.timestamps
++    end
++  end
++end
+</span></code></pre></div></details>
+
+              <details
+  id="db/schema.rb"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse db/schema.rb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand db/schema.rb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      db/schema.rb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/db/schema.rb b/db/schema.rb
+index 2daeec1..8fd5890 100644
+</span><span class="gd">--- a/db/schema.rb
+</span><span class="gi">+++ b/db/schema.rb
+</span><span class="p">@@ -10,7 +10,7 @@</span>
+ #
+ # It's strongly recommended that you check this file into your version control system.
+ 
+<span class="gd">-ActiveRecord::Schema.define(version: 2020_10_01_040643) do
+</span><span class="gi">+ActiveRecord::Schema.define(version: 2020_10_04_015757) do
+</span> 
+   # These are extensions that must be enabled in order to support this database
+   enable_extension "plpgsql"
+<span class="p">@@ -53,6 +53,20 @@</span> ActiveRecord::Schema.define(version: 2020_10_01_040643) do
+     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+   end
+ 
+<span class="gi">+  create_table "messages", force: :cascade do |t|
++    t.datetime "created_at", precision: 6, null: false
++    t.datetime "updated_at", precision: 6, null: false
++  end
++
++  create_table "sessions", force: :cascade do |t|
++    t.string "session_id", null: false
++    t.text "data"
++    t.datetime "created_at", precision: 6, null: false
++    t.datetime "updated_at", precision: 6, null: false
++    t.index ["session_id"], name: "index_sessions_on_session_id", unique: true
++    t.index ["updated_at"], name: "index_sessions_on_updated_at"
++  end
++
+</span>   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+ end
+</code></pre></div></details>
+
+              <details
+  id="package.json"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse package.json</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand package.json</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      package.json
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/package.json b/package.json
+index 68db034..e0c6a58 100644
+</span><span class="gd">--- a/package.json
+</span><span class="gi">+++ b/package.json
+</span><span class="p">@@ -3,14 +3,13 @@</span>
+   "private": true,
+   "dependencies": {
+     "@babel/preset-typescript": "^7.10.4",
+<span class="gi">+    "@hotwired/turbo-rails": "^7.0.0-beta.1",
+</span>     "@rails/actioncable": "^6.0.0",
+     "@rails/actiontext": "^6.0.0",
+     "@rails/activestorage": "^6.0.0",
+<span class="gd">-    "@rails/ujs": "^6.0.0",
+</span>     "@rails/webpacker": "5.1.1",
+     "tailwindcss": "^1.8.10",
+     "trix": "^1.3.1",
+<span class="gd">-    "turbolinks": "^5.2.0",
+</span>     "typescript": "^4.0.3"
+   },
+   "version": "0.1.0",
+</code></pre></div></details>
+
+              <details
+  id="test/controllers/messages_controller_test.rb"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse test/controllers/messages_controller_test.rb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand test/controllers/messages_controller_test.rb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      test/controllers/messages_controller_test.rb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/test/controllers/messages_controller_test.rb b/test/controllers/messages_controller_test.rb
+</span><span class="p">new file mode 100644
+</span><span class="gh">index 0000000..0c8edf8
+</span><span class="gd">--- /dev/null
+</span><span class="gi">+++ b/test/controllers/messages_controller_test.rb
+</span><span class="p">@@ -0,0 +1,55 @@</span>
+<span class="gi">+require "test_helper"
++
++class MessagesControllerTest &lt; ActionDispatch::IntegrationTest
++  test "#create with invalid parameters redirects to the new action" do
++    post messages_path, params: {
++      message: { content: "" }
++    }
++
++    assert_redirected_to messages_url
++    assert_flash_params({ message: { content: "" } })
++  end
++
++  test "#create clears parameters once successful" do
++    post messages_path, params: {
++      message: { content: "" }
++    }
++    follow_redirect!
++    post messages_path, params: {
++      message: { content: "Hello, world" }
++    }
++
++    assert_response(:redirect).then { follow_redirect! }
++    assert_empty flash
++    assert_select "ul" do
++      assert_select "li", text: "Hello, world", count: 1
++    end
++  end
++
++  test "#index through a direct request renders a fresh Message form" do
++    get messages_path
++
++    assert_response :success
++    assert_select "#message_content_validation_message", count: 0
++    assert_select %{trix-editor:not([aria-invalid="true"]):not([aria-describedby])}
++  end
++
++  test "#index when redirected with invalid parameters renders errors" do
++    post messages_path, params: {
++      message: { content: "" }
++    }
++
++    assert_redirected_to(messages_url).then { follow_redirect! }
++    assert_select "#message_content_validation_message", "can't be blank"
++    assert_select %{trix-editor[aria-invalid="true"][aria-describedby~="message_content_validation_message"]}
++  end
++
++  private
++    def assert_flash_params(params)
++      values_from_flash = flash[:params].slice(*params.keys)
++
++      assert_equal \
++        params.with_indifferent_access,
++        values_from_flash.with_indifferent_access
++    end
++end
+</span></code></pre></div></details>
+
+              <details
+  id="test/models/message_test.rb"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse test/models/message_test.rb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand test/models/message_test.rb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      test/models/message_test.rb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/test/models/message_test.rb b/test/models/message_test.rb
+</span><span class="p">new file mode 100644
+</span><span class="gh">index 0000000..ddfc572
+</span><span class="gd">--- /dev/null
+</span><span class="gi">+++ b/test/models/message_test.rb
+</span><span class="p">@@ -0,0 +1,12 @@</span>
+<span class="gi">+require "test_helper"
++
++class MessageTest &lt; ActiveSupport::TestCase
++  test "invalid when content is missing" do
++    message = Message.new
++
++    valid = message.validate
++
++    assert_not valid
++    assert_includes message.errors, :content
++  end
++end
+</span></code></pre></div></details>
+
+              <details
+  id="yarn.lock"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse yarn.lock</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand yarn.lock</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      yarn.lock
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/yarn.lock b/yarn.lock
+index ec25bae..b3314be 100644
+</span><span class="gd">--- a/yarn.lock
+</span><span class="gi">+++ b/yarn.lock
+</span><span class="p">@@ -875,11 +875,29 @@</span>
+     postcss "7.0.32"
+     purgecss "^2.3.0"
+ 
+<span class="gi">+"@hotwired/turbo-rails@^7.0.0-beta.1":
++  version "7.0.0-beta.1"
++  resolved "https://registry.yarnpkg.com/@hotwired/turbo-rails/-/turbo-rails-7.0.0-beta.1.tgz#90399dd43616efee263b4c8391aa302559c3a17e"
++  integrity sha512-5Y8rq4PUAAk3+yiTFJxOEMQbrfo9cY5E9+nQYUifColm/GdX1IHV6rJvj0+ND/jdniTL6E3eaI5biBkVis57dA==
++  dependencies:
++    "@hotwired/turbo" "^7.0.0-beta.1"
++    "@rails/actioncable" "^6.1.0"
++
++"@hotwired/turbo@^7.0.0-beta.1":
++  version "7.0.0-beta.1"
++  resolved "https://registry.yarnpkg.com/@hotwired/turbo/-/turbo-7.0.0-beta.1.tgz#0111db8a80a7bb308c4cfdd2720112d06bf25c33"
++  integrity sha512-V7hhELbDkYUGaHw/Yw4tu9pDUT1WE4t3A7tRs7Zh0Uwtk2vaJnmykNZ2uq20BnLjofufA1+MLJZ6AXJ3B/Il5A==
++
+</span> "@rails/actioncable@^6.0.0":
+   version "6.0.3"
+   resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-6.0.3.tgz#722b4b639936129307ddbab3a390f6bcacf3e7bc"
+   integrity sha512-I01hgqxxnOgOtJTGlq0ZsGJYiTEEiSGVEGQn3vimZSqEP1HqzyFNbzGTq14Xdyeow2yGJjygjoFF1pmtE+SQaw==
+ 
+<span class="gi">+"@rails/actioncable@^6.1.0":
++  version "6.1.0"
++  resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-6.1.0.tgz#f336f25450b1bc43b99bc60557a70b6e6bb1d3d2"
++  integrity sha512-eDgy+vcKN9RIzxmMBfSAe77rTj2cp6kJALiVQyKrW2O9EK2MdostOmP+99At/Dit3ur5+77NVnruxD7y14ZYFA==
++
+</span> "@rails/actiontext@^6.0.0":
+   version "6.0.3"
+   resolved "https://registry.yarnpkg.com/@rails/actiontext/-/actiontext-6.0.3.tgz#71dacd49df7c16a363e20aa89a53efcad8fcecde"
+<span class="p">@@ -894,11 +912,6 @@</span>
+   dependencies:
+     spark-md5 "^3.0.0"
+ 
+<span class="gd">-"@rails/ujs@^6.0.0":
+-  version "6.0.3"
+-  resolved "https://registry.yarnpkg.com/@rails/ujs/-/ujs-6.0.3.tgz#e68a03278e30daea6a110aac5dfa33c60c53055d"
+-  integrity sha512-CM9OEvoN9eXkaX7PXEnbsQLULJ97b9rVmwliZbz/iBOERLJ68Rk3ClJe+fQEMKU4CBZfky2lIRnfslOdUs9SLQ==
+-
+</span> "@rails/webpacker@5.1.1":
+   version "5.1.1"
+   resolved "https://registry.yarnpkg.com/@rails/webpacker/-/webpacker-5.1.1.tgz#3c937aa719e46341f037a3f37349ef58085950df"
+<span class="p">@@ -7318,11 +7331,6 @@</span> tunnel-agent@^0.6.0:
+   dependencies:
+     safe-buffer "^5.0.1"
+ 
+<span class="gd">-turbolinks@^5.2.0:
+-  version "5.2.0"
+-  resolved "https://registry.yarnpkg.com/turbolinks/-/turbolinks-5.2.0.tgz#e6877a55ea5c1cb3bb225f0a4ae303d6d32ff77c"
+-  integrity sha512-pMiez3tyBo6uRHFNNZoYMmrES/IaGgMhQQM+VFF36keryjb5ms0XkVpmKHkfW/4Vy96qiGW3K9bz0tF5sK9bBw==
+-
+</span> tweetnacl@^0.14.3, tweetnacl@~0.14.0:
+   version "0.14.5"
+   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
+</code></pre></div></details>
+
+          </aside>
+      </article>
+    </main>
+  </body>
+</html>
